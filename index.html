@@ -1,0 +1,2193 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Optizeal is a marketing and creative studio helping ambitious brands build relevance, reach and lasting growth.">
+
+    <meta name="author" content="Optizeal">
+
+    <meta name="theme-color" content="#f4f3ef">
+
+    <title>Optizeal — Marketing That Moves Brands</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f3ef;
+            color: #171717;
+
+            font-family: "DM Sans", sans-serif;
+
+            line-height: 1.5;
+
+            overflow-x: hidden;
+
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        ::selection {
+            background: #171717;
+            color: #f4f3ef;
+        }
+
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --background: #f4f3ef;
+            --surface: #ebeae5;
+            --white: #ffffff;
+
+            --black: #171717;
+            --dark: #20201f;
+
+            --muted: #73736f;
+            --light-text: #a4a39e;
+
+            --line: #d7d6d0;
+
+            --accent: #e3ff4f;
+
+            --max-width: 1240px;
+        }
+
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        .container {
+            width: min(90%, var(--max-width));
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+            font-weight: 600;
+
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--black);
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .header {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            transition:
+                background .3s ease,
+                border .3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(244, 243, 239, .92);
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav {
+            height: 82px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Manrope", sans-serif;
+
+            font-size: 25px;
+            font-weight: 800;
+
+            letter-spacing: -.07em;
+        }
+
+        .logo-dot {
+            display: inline-block;
+
+            width: 7px;
+            height: 7px;
+
+            margin-left: 3px;
+
+            background: var(--black);
+
+            border-radius: 50%;
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+
+            gap: 34px;
+        }
+
+        .nav-center a {
+            position: relative;
+
+            color: #555550;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            transition: color .25s ease;
+        }
+
+        .nav-center a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -5px;
+
+            width: 0;
+            height: 1px;
+
+            background: var(--black);
+
+            transition: width .25s ease;
+        }
+
+        .nav-center a:hover {
+            color: var(--black);
+        }
+
+        .nav-center a:hover::after {
+            width: 100%;
+        }
+
+        .nav-contact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 11px 17px;
+
+            background: var(--black);
+            color: white;
+
+            border-radius: 100px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition:
+                transform .25s ease,
+                background .25s ease;
+        }
+
+        .nav-contact:hover {
+            transform: translateY(-2px);
+            background: #30302e;
+        }
+
+        .menu-button {
+            display: none;
+
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid var(--line);
+            border-radius: 50%;
+
+            background: transparent;
+
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: end;
+        }
+
+        .hero-left {
+            padding-bottom: 10px;
+        }
+
+        .hero-title {
+            margin-top: 32px;
+
+            max-width: 760px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(4rem, 7.7vw, 7.6rem);
+
+            line-height: .88;
+
+            letter-spacing: -.085em;
+
+            font-weight: 700;
+        }
+
+        .hero-title .outline {
+            color: transparent;
+
+            -webkit-text-stroke: 1.5px var(--black);
+        }
+
+        .hero-copy {
+            max-width: 480px;
+
+            margin-top: 38px;
+
+            color: #64635e;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+
+            gap: 18px;
+
+            margin-top: 34px;
+        }
+
+        .primary-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+
+            padding: 15px 20px;
+
+            background: var(--black);
+            color: white;
+
+            border-radius: 100px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition:
+                transform .25s ease,
+                background .25s ease;
+        }
+
+        .primary-button span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 25px;
+            height: 25px;
+
+            background: var(--accent);
+            color: var(--black);
+
+            border-radius: 50%;
+
+            font-size: 13px;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-3px);
+            background: #30302e;
+        }
+
+        .text-button {
+            color: #555550;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            border-bottom: 1px solid #aaa9a3;
+
+            padding-bottom: 3px;
+        }
+
+        .hero-right {
+            display: flex;
+
+            justify-content: flex-end;
+
+            padding-bottom: 25px;
+        }
+
+        .hero-note {
+            max-width: 350px;
+
+            border-left: 1px solid #bdbcb6;
+
+            padding-left: 25px;
+        }
+
+        .hero-note p {
+            color: #686762;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+        .hero-note strong {
+            display: block;
+
+            margin-top: 25px;
+
+            color: var(--black);
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           MARQUEE
+        ===================================================== */
+
+        .marquee {
+            overflow: hidden;
+
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+
+            background: var(--black);
+
+            color: white;
+        }
+
+        .marquee-track {
+            width: max-content;
+
+            display: flex;
+            align-items: center;
+
+            animation: marquee 25s linear infinite;
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+
+            padding: 21px 40px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            letter-spacing: .1em;
+            text-transform: uppercase;
+
+            white-space: nowrap;
+        }
+
+        .marquee-item i {
+            width: 6px;
+            height: 6px;
+
+            background: var(--accent);
+
+            border-radius: 50%;
+        }
+
+        @keyframes marquee {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+
+        }
+
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .intro {
+            padding: 150px 0;
+        }
+
+        .intro-grid {
+            display: grid;
+
+            grid-template-columns: .7fr 1.3fr;
+
+            gap: 70px;
+        }
+
+        .intro-heading {
+            font-family: "Manrope", sans-serif;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: .1em;
+        }
+
+        .intro-text {
+            max-width: 850px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(2.4rem, 4.4vw, 4.8rem);
+
+            line-height: 1.04;
+
+            letter-spacing: -.06em;
+
+            font-weight: 600;
+        }
+
+        .intro-text span {
+            color: #a1a09a;
+        }
+
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .services {
+            padding: 120px 0;
+
+            background: var(--dark);
+            color: white;
+        }
+
+        .services-top {
+            display: flex;
+            justify-content: space-between;
+
+            gap: 50px;
+
+            margin-bottom: 70px;
+        }
+
+        .services-title {
+            max-width: 600px;
+
+            margin-top: 24px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(3rem, 5vw, 5rem);
+
+            line-height: .98;
+
+            letter-spacing: -.065em;
+        }
+
+        .services-description {
+            max-width: 330px;
+
+            color: #999995;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+        .services .eyebrow {
+            color: #999995;
+        }
+
+        .services .eyebrow::before {
+            background: var(--accent);
+        }
+
+        .service-list {
+            border-top: 1px solid #3b3b39;
+        }
+
+        .service {
+            display: grid;
+
+            grid-template-columns: 80px 1fr 80px;
+
+            gap: 30px;
+
+            align-items: center;
+
+            padding: 30px 0;
+
+            border-bottom: 1px solid #3b3b39;
+
+            transition:
+                padding .3s ease,
+                background .3s ease;
+        }
+
+        .service:hover {
+            padding-left: 15px;
+            padding-right: 15px;
+
+            background: #252524;
+        }
+
+        .service-number {
+            color: #777773;
+
+            font-size: 13px;
+        }
+
+        .service-name {
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+
+            letter-spacing: -.04em;
+
+            font-weight: 600;
+        }
+
+        .service-arrow {
+            justify-self: end;
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #484845;
+            border-radius: 50%;
+
+            transition:
+                background .25s ease,
+                color .25s ease;
+        }
+
+        .service:hover .service-arrow {
+            background: var(--accent);
+            color: var(--black);
+
+            border-color: var(--accent);
+        }
+
+
+        /* =====================================================
+           WORK
+        ===================================================== */
+
+        .work {
+            padding: 150px 0;
+        }
+
+        .work-header {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+
+            margin-bottom: 60px;
+        }
+
+        .work-title {
+            margin-top: 22px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(3rem, 5vw, 5rem);
+
+            line-height: .95;
+
+            letter-spacing: -.07em;
+        }
+
+        .view-all {
+            font-size: 14px;
+            font-weight: 600;
+
+            border-bottom: 1px solid #999;
+
+            padding-bottom: 4px;
+        }
+
+        .work-grid {
+            display: grid;
+
+            grid-template-columns: 1.15fr .85fr;
+
+            gap: 22px;
+        }
+
+        .project {
+            position: relative;
+
+            min-height: 550px;
+
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            padding: 35px;
+
+            background: #dddcd6;
+        }
+
+        .project:nth-child(2) {
+            min-height: 550px;
+        }
+
+        .project-visual {
+            position: absolute;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            background: #c9c8c2;
+        }
+
+        .project-visual::before {
+            content: "";
+
+            position: absolute;
+
+            width: 65%;
+            height: 65%;
+
+            top: 15%;
+            left: 18%;
+
+            border-radius: 50%;
+
+            background: #20201f;
+
+            transition: transform .7s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .project-visual::after {
+            content: "";
+
+            position: absolute;
+
+            width: 35%;
+            height: 35%;
+
+            right: 12%;
+            bottom: 15%;
+
+            border-radius: 50%;
+
+            background: var(--accent);
+
+            transition: transform .7s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .project:nth-child(2) .project-visual::before {
+            width: 80%;
+            height: 45%;
+
+            top: 18%;
+            left: 10%;
+
+            border-radius: 0;
+
+            transform: rotate(-12deg);
+
+            background: #1d1d1b;
+        }
+
+        .project:nth-child(2) .project-visual::after {
+            width: 45%;
+            height: 45%;
+
+            right: 25%;
+            bottom: 5%;
+
+            background: #bcbab3;
+        }
+
+        .project:hover .project-visual::before {
+            transform: scale(1.08);
+        }
+
+        .project:nth-child(2):hover .project-visual::before {
+            transform: rotate(-12deg) scale(1.08);
+        }
+
+        .project:hover .project-visual::after {
+            transform: scale(1.15);
+        }
+
+        .project-info {
+            position: relative;
+
+            z-index: 2;
+
+            padding: 20px;
+
+            background: rgba(244, 243, 239, .94);
+        }
+
+        .project-category {
+            color: #6f6e69;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: .12em;
+        }
+
+        .project-name {
+            margin-top: 7px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 24px;
+
+            letter-spacing: -.04em;
+        }
+
+
+        /* =====================================================
+           PROCESS
+        ===================================================== */
+
+        .process {
+            padding: 120px 0;
+
+            border-top: 1px solid var(--line);
+        }
+
+        .process-grid {
+            display: grid;
+
+            grid-template-columns: .7fr 1.3fr;
+
+            gap: 100px;
+        }
+
+        .process-title {
+            margin-top: 24px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(3rem, 5vw, 5rem);
+
+            line-height: .96;
+
+            letter-spacing: -.07em;
+        }
+
+        .process-list {
+            border-top: 1px solid var(--line);
+        }
+
+        .process-item {
+            display: grid;
+
+            grid-template-columns: 60px 1fr;
+
+            gap: 30px;
+
+            padding: 28px 0;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .process-number {
+            color: #8b8a85;
+
+            font-size: 13px;
+        }
+
+        .process-item h3 {
+            font-family: "Manrope", sans-serif;
+
+            font-size: 21px;
+
+            letter-spacing: -.03em;
+        }
+
+        .process-item p {
+            max-width: 560px;
+
+            margin-top: 8px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+            padding: 120px 0;
+        }
+
+        .cta-box {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 100px 70px;
+
+            background: var(--black);
+
+            color: white;
+        }
+
+        .cta-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 400px;
+            height: 400px;
+
+            right: -120px;
+            top: -170px;
+
+            border-radius: 50%;
+
+            border: 1px solid #3c3c39;
+        }
+
+        .cta-box::after {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            right: 30px;
+            top: -90px;
+
+            border-radius: 50%;
+
+            border: 1px solid #3c3c39;
+        }
+
+        .cta-content {
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 850px;
+        }
+
+        .cta .eyebrow {
+            color: #9b9b96;
+        }
+
+        .cta .eyebrow::before {
+            background: var(--accent);
+        }
+
+        .cta-title {
+            margin-top: 25px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: clamp(3.5rem, 7vw, 7rem);
+
+            line-height: .9;
+
+            letter-spacing: -.08em;
+        }
+
+        .cta-copy {
+            max-width: 500px;
+
+            margin-top: 28px;
+
+            color: #999995;
+
+            font-size: 16px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+
+            margin-top: 35px;
+
+            padding: 15px 20px;
+
+            background: var(--accent);
+            color: var(--black);
+
+            border-radius: 100px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: transform .25s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 50px 0 30px;
+
+            background: var(--black);
+
+            color: white;
+
+            border-top: 1px solid #292927;
+        }
+
+        .footer-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 50px;
+
+            padding-bottom: 70px;
+        }
+
+        .footer-logo {
+            font-family: "Manrope", sans-serif;
+
+            font-size: 30px;
+            font-weight: 800;
+
+            letter-spacing: -.07em;
+        }
+
+        .footer-tagline {
+            max-width: 300px;
+
+            margin-top: 12px;
+
+            color: #777773;
+
+            font-size: 13px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            gap: 80px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+
+            gap: 11px;
+        }
+
+        .footer-column-label {
+            margin-bottom: 8px;
+
+            color: #666662;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: .12em;
+        }
+
+        .footer-column a {
+            color: #b0b0ab;
+
+            font-size: 13px;
+
+            transition: color .2s ease;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #292927;
+
+            color: #60605c;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           REVEAL ANIMATION
+        ===================================================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-center,
+            .nav-contact {
+                display: none;
+            }
+
+            .menu-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+            .hero-right {
+                justify-content: flex-start;
+            }
+
+            .intro-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+            .services-top {
+                flex-direction: column;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project,
+            .project:nth-child(2) {
+                min-height: 500px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: min(92%, var(--max-width));
+            }
+
+            .nav {
+                height: 72px;
+            }
+
+            .hero {
+                padding-top: 110px;
+
+                min-height: auto;
+
+                padding-bottom: 80px;
+            }
+
+            .hero-title {
+                font-size: clamp(3.4rem, 16vw, 5rem);
+            }
+
+            .hero-copy {
+                font-size: 15px;
+            }
+
+            .hero-actions {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+            .intro {
+                padding: 100px 0;
+            }
+
+            .intro-text {
+                font-size: 2.5rem;
+            }
+
+            .services,
+            .work,
+            .process,
+            .cta {
+                padding: 90px 0;
+            }
+
+            .service {
+                grid-template-columns: 40px 1fr 45px;
+
+                gap: 15px;
+
+                padding: 23px 0;
+            }
+
+            .service-name {
+                font-size: 1.35rem;
+            }
+
+            .service-arrow {
+                width: 36px;
+                height: 36px;
+            }
+
+            .work-header {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 25px;
+            }
+
+            .project,
+            .project:nth-child(2) {
+                min-height: 400px;
+
+                padding: 20px;
+            }
+
+            .process-grid {
+                gap: 45px;
+            }
+
+            .process-item {
+                grid-template-columns: 40px 1fr;
+
+                gap: 15px;
+            }
+
+            .cta-box {
+                padding: 70px 25px;
+            }
+
+            .cta-title {
+                font-size: 3.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+
+                gap: 35px;
+            }
+
+            .footer-bottom {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header" id="header">
+
+        <div class="container nav">
+
+            <a href="#" class="logo">
+                optizeal<span class="logo-dot"></span>
+            </a>
+
+
+            <nav class="nav-center">
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#work">
+                    Work
+                </a>
+
+                <a href="#process">
+                    Approach
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <a href="#contact" class="nav-contact">
+                Start a project
+            </a>
+
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open menu">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+
+                <div class="hero-left reveal">
+
+                    <div class="eyebrow">
+                        Independent marketing studio
+                    </div>
+
+
+                    <h1 class="hero-title">
+
+                        Make your
+                        <span class="outline">brand</span>
+                        matter.
+
+                    </h1>
+
+
+                    <p class="hero-copy">
+
+                        Optizeal helps ambitious businesses turn
+                        ideas into brands people notice, remember
+                        and choose.
+
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a href="#contact" class="primary-button">
+
+                            Start a conversation
+
+                            <span>↗</span>
+
+                        </a>
+
+
+                        <a href="#work" class="text-button">
+
+                            See our work
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="hero-right reveal">
+
+                    <div class="hero-note">
+
+                        <p>
+
+                            We bring together strategy, creative
+                            thinking and digital execution to build
+                            brands with a reason to exist.
+
+                        </p>
+
+
+                        <strong>
+                            Strategy · Creative · Digital
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MARQUEE
+        ================================================== -->
+
+        <div class="marquee">
+
+            <div class="marquee-track">
+
+                <div class="marquee-item">
+                    Strategy
+                    <i></i>
+                    Branding
+                    <i></i>
+                    Digital
+                    <i></i>
+                    Growth
+                    <i></i>
+                </div>
+
+                <div class="marquee-item">
+                    Strategy
+                    <i></i>
+                    Branding
+                    <i></i>
+                    Digital
+                    <i></i>
+                    Growth
+                    <i></i>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             INTRO
+        ================================================== -->
+
+        <section class="intro">
+
+            <div class="container intro-grid">
+
+                <div class="intro-heading reveal">
+                    What we believe
+                </div>
+
+
+                <div class="intro-text reveal">
+
+                    Good marketing doesn't shout louder.
+
+                    <span>
+                        It gives people a reason to pay attention.
+                    </span>
+
+                    That's where we come in.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SERVICES
+        ================================================== -->
+
+        <section class="services" id="services">
+
+            <div class="container">
+
+
+                <div class="services-top">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            Capabilities
+                        </div>
+
+                        <h2 class="services-title">
+                            Built around what your brand needs.
+                        </h2>
+
+                    </div>
+
+
+                    <p class="services-description">
+
+                        No unnecessary layers. No one-size-fits-all
+                        packages. We build the right combination of
+                        strategy and execution for every project.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-list">
+
+
+                    <div class="service reveal">
+
+                        <div class="service-number">
+                            01
+                        </div>
+
+                        <div class="service-name">
+                            Brand Strategy
+                        </div>
+
+                        <div class="service-arrow">
+                            ↗
+                        </div>
+
+                    </div>
+
+
+                    <div class="service reveal">
+
+                        <div class="service-number">
+                            02
+                        </div>
+
+                        <div class="service-name">
+                            Social Media & Content
+                        </div>
+
+                        <div class="service-arrow">
+                            ↗
+                        </div>
+
+                    </div>
+
+
+                    <div class="service reveal">
+
+                        <div class="service-number">
+                            03
+                        </div>
+
+                        <div class="service-name">
+                            Digital Marketing
+                        </div>
+
+                        <div class="service-arrow">
+                            ↗
+                        </div>
+
+                    </div>
+
+
+                    <div class="service reveal">
+
+                        <div class="service-number">
+                            04
+                        </div>
+
+                        <div class="service-name">
+                            Web Design & Development
+                        </div>
+
+                        <div class="service-arrow">
+                            ↗
+                        </div>
+
+                    </div>
+
+
+                    <div class="service reveal">
+
+                        <div class="service-number">
+                            05
+                        </div>
+
+                        <div class="service-name">
+                            Search & Performance
+                        </div>
+
+                        <div class="service-arrow">
+                            ↗
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WORK
+        ================================================== -->
+
+        <section class="work" id="work">
+
+            <div class="container">
+
+
+                <div class="work-header reveal">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            Selected work
+                        </div>
+
+                        <h2 class="work-title">
+                            Work worth<br>
+                            talking about.
+                        </h2>
+
+                    </div>
+
+
+                    <a href="#" class="view-all">
+                        View all projects →
+                    </a>
+
+                </div>
+
+
+
+                <div class="work-grid">
+
+
+                    <article class="project reveal">
+
+                        <div class="project-visual"></div>
+
+
+                        <div class="project-info">
+
+                            <div class="project-category">
+                                Brand Strategy · Identity
+                            </div>
+
+                            <h3 class="project-name">
+                                Building a brand from the ground up
+                            </h3>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="project reveal">
+
+                        <div class="project-visual"></div>
+
+
+                        <div class="project-info">
+
+                            <div class="project-category">
+                                Digital · Growth
+                            </div>
+
+                            <h3 class="project-name">
+                                Turning attention into action
+                            </h3>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROCESS
+        ================================================== -->
+
+        <section class="process" id="process">
+
+            <div class="container process-grid">
+
+
+                <div class="reveal">
+
+                    <div class="eyebrow">
+                        Our approach
+                    </div>
+
+                    <h2 class="process-title">
+                        Simple process.<br>
+                        Serious work.
+                    </h2>
+
+                </div>
+
+
+
+                <div class="process-list">
+
+
+                    <div class="process-item reveal">
+
+                        <div class="process-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Understand
+                            </h3>
+
+                            <p>
+                                We start by understanding your business,
+                                audience, market and the problem we're
+                                actually trying to solve.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="process-item reveal">
+
+                        <div class="process-number">
+                            02
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Define
+                            </h3>
+
+                            <p>
+                                We turn research into a clear direction
+                                for the brand, campaign or digital
+                                experience.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="process-item reveal">
+
+                        <div class="process-number">
+                            03
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Create
+                            </h3>
+
+                            <p>
+                                Strategy becomes design, content,
+                                campaigns and digital experiences
+                                people can interact with.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="process-item reveal">
+
+                        <div class="process-number">
+                            04
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Grow
+                            </h3>
+
+                            <p>
+                                We launch, learn from the response and
+                                continuously improve what we build.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CTA
+        ================================================== -->
+
+        <section class="cta" id="contact">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+                    <div class="cta-content reveal">
+
+                        <div class="eyebrow">
+                            Have a project in mind?
+                        </div>
+
+
+                        <h2 class="cta-title">
+                            Let's make<br>
+                            something matter.
+                        </h2>
+
+
+                        <p class="cta-copy">
+
+                            Tell us where your brand is today and
+                            where you want it to go. We'll take it
+                            from there.
+
+                        </p>
+
+
+                        <a
+                            href="mailto:hello@optizeal.com"
+                            class="cta-button">
+
+                            hello@optizeal.com
+
+                            <span>↗</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+
+            <div class="footer-top">
+
+
+                <div>
+
+                    <div class="footer-logo">
+                        optizeal<span class="logo-dot"></span>
+                    </div>
+
+
+                    <p class="footer-tagline">
+
+                        Strategy, creativity and digital
+                        experiences for ambitious brands.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="footer-links">
+
+
+                    <div class="footer-column">
+
+                        <div class="footer-column-label">
+                            Explore
+                        </div>
+
+                        <a href="#services">
+                            Services
+                        </a>
+
+                        <a href="#work">
+                            Work
+                        </a>
+
+                        <a href="#process">
+                            Approach
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="footer-column">
+
+                        <div class="footer-column-label">
+                            Connect
+                        </div>
+
+                        <a href="mailto:hello@optizeal.com">
+                            Email
+                        </a>
+
+                        <a href="https://www.instagram.com/optizealoff/?utm_source=ig_web_button_share_sheet">
+                            Instagram
+                        </a>
+
+                        <a href="#">
+                            LinkedIn
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Optizeal. All rights reserved.
+                </span>
+
+                <span>
+                    Built with intent.
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* -----------------------------------------------------
+           HEADER SCROLL
+        ----------------------------------------------------- */
+
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 30) {
+
+                header.classList.add("scrolled");
+
+            } else {
+
+                header.classList.remove("scrolled");
+
+            }
+
+        });
+
+
+
+        /* -----------------------------------------------------
+           REVEAL ANIMATIONS
+        ----------------------------------------------------- */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const revealObserver =
+            new IntersectionObserver(
+
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(element);
+
+        });
+
+
+
+        /* -----------------------------------------------------
+           MOBILE MENU
+        ----------------------------------------------------- */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+
+        let menuOpen = false;
+
+
+        menuButton.addEventListener("click", () => {
+
+            menuOpen = !menuOpen;
+
+
+            if (menuOpen) {
+
+                menuButton.textContent = "×";
+
+                document.querySelector(".nav-center").style.display =
+                    "flex";
+
+                document.querySelector(".nav-center").style.position =
+                    "absolute";
+
+                document.querySelector(".nav-center").style.top =
+                    "72px";
+
+                document.querySelector(".nav-center").style.left =
+                    "4%";
+
+                document.querySelector(".nav-center").style.right =
+                    "4%";
+
+                document.querySelector(".nav-center").style.padding =
+                    "25px";
+
+                document.querySelector(".nav-center").style.flexDirection =
+                    "column";
+
+                document.querySelector(".nav-center").style.alignItems =
+                    "flex-start";
+
+                document.querySelector(".nav-center").style.background =
+                    "#f4f3ef";
+
+                document.querySelector(".nav-center").style.border =
+                    "1px solid #d7d6d0";
+
+            } else {
+
+                menuButton.textContent = "☰";
+
+                document.querySelector(".nav-center").removeAttribute(
+                    "style"
+                );
+
+            }
+
+        });
+
+
+
+        /* -----------------------------------------------------
+           CLOSE MOBILE MENU ON LINK CLICK
+        ----------------------------------------------------- */
+
+        document.querySelectorAll(".nav-center a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                if (window.innerWidth <= 900) {
+
+                    menuOpen = false;
+
+                    menuButton.textContent = "☰";
+
+                    document.querySelector(".nav-center")
+                        .removeAttribute("style");
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+```
